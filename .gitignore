@@ -1,0 +1,7 @@
+# Pastas
+**/__pycache__
+venv
+
+# Arquivos
+.pytest_cache
+.env
