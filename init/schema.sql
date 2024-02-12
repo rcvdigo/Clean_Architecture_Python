@@ -7,4 +7,3 @@ CREATE TABLE IF NOT EXISTS `clean_database`.`users` (
     age BIGINT NOT NULL,
     primary key (id)
 );
-
