@@ -1,9 +1,14 @@
 import requests
+import os
+from dotenv import load_dotenv
 from pprint import pprint
 
+
 def make_github_graphql_request(query_def, variables_def):
+    load_dotenv()
+
     # Defina o token de acesso do GitHub
-    token = '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'
+    token = os.getenv("GIT_TOKEN")
 
     # Defina o cabeçalho da requisição com o token de acesso
     headers = {
@@ -82,7 +87,7 @@ QUERY = """
 """
 
 variables = {
-    "username": "rcvdigo"
+    "username": os.getenv("GIT_NAME")
 }
 
 # Faz a requisição GraphQL
