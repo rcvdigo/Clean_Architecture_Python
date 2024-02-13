@@ -1,0 +1,10 @@
+from abc import ABC
+from abc import abstractmethod
+from typing import Dict
+
+
+class UserFinder(ABC):
+
+    @abstractmethod
+    def find(self, first_name: str) -> Dict: 
+        pass

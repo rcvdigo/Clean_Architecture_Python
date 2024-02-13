@@ -1,8 +1,11 @@
+from typing import List
 from src.infra.db.settings.connection import DbConnectionHandler
 from src.infra.db.entities.users import Users as UsersEntity
+from src.domain.data.interfaces.users_repository import UsersRepositoryInterface
+from src.domain.models.users import Users
 
 
-class UsersRepository:
+class UsersRepository(UsersRepositoryInterface):
     
     @classmethod # Nos parametros os ": type-hitss" é como se fosse um tipo de comentário, ex docstring
     def insert_user(
@@ -29,7 +32,7 @@ class UsersRepository:
     def select_user(
         cls,
         first_name: str
-    ) -> any:
+    ) -> List[Users]:
         
         with DbConnectionHandler() as database:
             try:
