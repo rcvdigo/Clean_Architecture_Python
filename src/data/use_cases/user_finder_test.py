@@ -1,6 +1,4 @@
 # from src.infra.db.repositories.users_repositories import UsersRepository
-from typing import List
-from src.domain.models.users import Users
 from src.infra.db.tests.users_repository import UsersRepositorySpy as UsersRepository
 from .user_finder import UserFinder
 
