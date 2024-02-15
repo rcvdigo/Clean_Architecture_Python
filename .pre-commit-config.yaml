@@ -5,19 +5,19 @@ repos:
         name: pylint
         entry: pylint
         language: system
-        type: [python]
+        types: [python]
         args:
           [
-            "-rn",  # Only display message
-            "-sn",  # Don't display the score
-            "--rcfile=.pylintrc",  # Link to your config file
-            "--load-plugins=pylint.extensions.docparams",  # Load an extension
+            "-rn", # Only display messages
+            "-sn", # Don't display the score
+            "--rcfile=.pylintrc", # Link to your config file
+            "--load-plugins=pylint.extensions.docparams", # Load an extension
           ]
   - repo: local
     hooks:
       - id: requirements
         name: requirements
-        entry: bash -c 'pip freeze > requirements.txt; git add requirements.txt'
+        entry: bash -c 'venv/Scripts/pip freeze > requirements.txt; git add requirements.txt'
         language: system
         pass_filenames: false
         stages: [commit]

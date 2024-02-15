@@ -1,7 +1,7 @@
 from abc import ABC
 from abc import abstractmethod
 from typing import List
-from src.infra.db.repositories.users_repositories import Users
+from src.domain.models.users import Users
 
 
 class UsersRepositoryInterface(ABC):

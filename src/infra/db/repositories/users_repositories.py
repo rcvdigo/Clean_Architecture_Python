@@ -1,7 +1,7 @@
 from typing import List
 from src.infra.db.settings.connection import DbConnectionHandler
 from src.infra.db.entities.users import Users as UsersEntity
-from src.domain.data.interfaces.users_repository import UsersRepositoryInterface
+from src.data.interfaces.users_repository import UsersRepositoryInterface
 from src.domain.models.users import Users
 
 

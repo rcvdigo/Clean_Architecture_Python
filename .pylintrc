@@ -4,6 +4,13 @@ disable=
       C0116, # missing-function-docstring
       E0015, # unrecognized-option
       C0114, # missing-module-docstring
+      W0703, # Catching too general exception Exception
+      C0209, # Consider-using-f-string
+      C0321, # Multiple-statements
+      W0221, # Arguments-differ
+      R0801, # Duplicate-code
+      C0115, # missing-class-docstring
+      R0903, # too-few-public-methods
 
 
 # Analyse import fallback blocks. This can be used to support both Python 2 and
@@ -94,7 +101,7 @@ persistent=yes
 
 # Minimum Python version to use for version dependent checks. Will default to
 # the version used to run pylint.
-py-version=3.12
+py-version=3.8
 
 # Discover python modules and packages in the file system subtree.
 recursive=no
@@ -434,15 +441,13 @@ disable=raw-checker-failed,
         suppressed-message,
         useless-suppression,
         deprecated-pragma,
-        use-symbolic-message-instead,
-        use-implicit-booleaness-not-comparison-to-string,
-        use-implicit-booleaness-not-comparison-to-zero
+        use-symbolic-message-instead
 
 # Enable the message, report, category or checker with the given id(s). You can
 # either give multiple identifier separated by comma (,) or put this option
 # multiple time (only on the command line, not in the configuration file where
 # it should appear only once). See also the "--disable" option for examples.
-enable=
+enable=c-extension-no-member
 
 
 [METHOD_ARGS]
@@ -488,9 +493,8 @@ evaluation=max(0, 0 if fatal else 10.0 - ((float(5 * error + warning + refactor 
 # used to format the message information. See doc for all details.
 msg-template=
 
-# Set the output format. Available formats are: text, parseable, colorized,
-# json2 (improved json format), json (old json format) and msvs (visual
-# studio). You can also give a reporter class, e.g.
+# Set the output format. Available formats are text, parseable, colorized, json
+# and msvs (visual studio). You can also give a reporter class, e.g.
 # mypackage.mymodule.MyReporterClass.
 #output-format=
 
@@ -525,7 +529,7 @@ min-similarity-lines=4
 max-spelling-suggestions=4
 
 # Spelling dictionary name. No available dictionaries : You need to install
-# both the python package and the system dependency for enchant to work.
+# both the python package and the system dependency for enchant to work..
 spelling-dict=
 
 # List of comma separated words that should be considered directives if they
