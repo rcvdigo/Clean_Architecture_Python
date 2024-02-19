@@ -3,6 +3,8 @@ from typing import List
 from src.domain.use_cases.user_finder import UserFinder as UserFinderInterface
 from src.data.interfaces.users_repository import UsersRepositoryInterface
 from src.domain.models.users import Users
+from src.errors.types import HttpBadRequestError
+from src.errors.types import HttpNotFoundError
 
 
 class UserFinder(UserFinderInterface):
@@ -19,19 +21,19 @@ class UserFinder(UserFinderInterface):
     def __validate_name(cls, first_name: str) -> None:
         # Caso first_name não seja as letras do alfabeto
         if not first_name.isalpha():
-            raise Exception(
+            raise HttpBadRequestError(
                 'Nome inválido para busca'
                 )
         
         if len(first_name) > 18:
-            raise Exception(
+            raise HttpBadRequestError(
                 'Nome muito grande para busca, o máximo de caracteres é 18'
                 )
 
     def __search_user(self, first_name: str) -> List[Users]:
         query = self.__users_repository.select_user(first_name=first_name)
         if query == []:
-            raise Exception('Usuário não existe na base de dados!')
+            raise HttpNotFoundError('Usuário não existe na base de dados!')
         return query
     
     @classmethod

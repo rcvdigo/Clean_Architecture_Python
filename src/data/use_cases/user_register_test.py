@@ -42,4 +42,4 @@ def test_register_first_name_error():
         )
         assert False
     except Exception as ex:
-        assert str(ex) == "Nome inválido para busca"
+        assert str(ex) == "Nome inválido o cadastro"
