@@ -25,7 +25,7 @@ def find_user():
     http_response = None
     try:
         # Protegendo a inserção de dados injetando o validator user_register_validator
-        # user_find_validator(request=request_flask)
+        user_find_validator(request=request_flask)
 
         http_response = request_adapter(
             request=request_flask,
@@ -42,7 +42,7 @@ def register_user():
     http_response = None
     try:
         # Protegendo a inserção de dados injetando o validator user_register_validator
-        # user_register_validator(request=request_flask)
+        user_register_validator(request=request_flask)
 
         http_response = request_adapter(
             request=request_flask,

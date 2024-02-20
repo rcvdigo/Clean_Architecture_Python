@@ -13,12 +13,18 @@ class DbConnectionHandler():
         load_dotenv()
 
         self.__connection_string = "{}://{}:{}@{}:{}/{}".format(
-            os.getenv("DB_DRIVER"),
-            os.getenv("DB_USERNAME"),
-            os.getenv("DB_PASSWORD"),
-            os.getenv("DB_HOST"),
-            os.getenv("DB_PORT"),
-            os.getenv("DB_DATABASE")
+            # os.getenv("DB_DRIVER"),
+            # os.getenv("DB_USERNAME"),
+            # os.getenv("DB_PASSWORD"),
+            # os.getenv("DB_HOST"),
+            # os.getenv("DB_PORT"),
+            # os.getenv("DB_DATABASE")
+            "mysql+pymysql",
+            "root",
+            "root",
+            "localhost",
+            "3306",
+            "clean_database"
         )
         self.__engine = self.create_database_engine()
         self.session = None

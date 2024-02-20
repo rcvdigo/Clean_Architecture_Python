@@ -3,7 +3,7 @@ from src.errors.types import HttpUnprocessableEntityError
 
 
 def user_find_validator(request: any):
-    body_validator = Validator(
+    query_params_validator = Validator(
         {
             "first_name": {
                 "type": "string",
@@ -13,7 +13,7 @@ def user_find_validator(request: any):
         }
     )
 
-    response = body_validator.validate(request.json)
+    response = query_params_validator.validate(request.args)
 
     if response is False:
-        raise HttpUnprocessableEntityError(message=body_validator.errors)
+        raise HttpUnprocessableEntityError(message=query_params_validator.errors)
